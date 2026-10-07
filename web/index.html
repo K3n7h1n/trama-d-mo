@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRAMA — Follow the Thread · Vitra</title>
+  <meta name="description" content="Lancement du fauteuil TRAMA sur le Vitra Campus, le 26 novembre 2026. Un fil rouge, trois temps, un fauteuil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=13">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- TRAMA logo, defined once (source: logo/trama.svg) and reused with <use href="#trama"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="trama" viewBox="46 404 1356 300">
+    <g fill="currentColor">
+      <path d="M264.86,509.69l-.07,110.68c0,14.29,3.58,24.89,17.51,27.9,5.71,1.23,10.93.53,16.8,2.66-18.83,1.86-36.41.91-54.92,1.06-15.18.12-29.47.61-44.96-1.17,7.11-2.13,13.47-1.3,19.79-3.44,7.67-2.59,13.59-8.96,13.89-17.15l1.15-31.8-.33-73.17-.1-8.85.09-95.53-30.59.47c-11.7.18-22.73,3.94-31.62,11.44-11.25,9.43-16.59,21.83-22.58,35.3,2.22-17.8,6.04-33.58,9.18-50.96h69.09s108.9-.14,108.9-.14l2.38,22.83-8.39-7.2c-18.62-12.67-42.29-11.88-65.29-11.56l.09,78.24-.03,10.39ZM916.62,617.84l-96.79-172.38M1070.23,614.95,1093.8,559.09,1093.8,559.09l-26.55,64.47c-2.21,5.32-3.16,11.18-.65,16.63,1.49,3.22,6.01,6.75,9.61,7.21l17.07,2.18c1.64.21,2.78.47,3.99,1.79l-29.18.76-94.92-.35-2.51-.3c-.37-.04-.38-.99-.06-1.15.5-.25,2.04-.8,2.67-.85l12.79-.88,2.76-.29s9.65-2.6,12.2-9.59c2.11-6.45,3.25-11.71,3.24-18.41l-.16-175.59-26.08,52.51-16.91,34.03-44.5,86.58-27.16-47.7-28.02-50.03-41.61-74.65-.45,76-.08,57.49.43,10.83c-.3,19.74-3.29,45.95,13.64,55.44,6.59,3.69,14.16,4.02,22.23,4.41,1.13.75,1.46,1.97.28,1.96l-18.85.46-107.77.13-32.38-1.07,12.13-2.84c4.86-1.14,9.58-4.43,10.13-9.91.49-4.86.05-10.43-1.6-15.15l-51.05-184.86-50.46,110.72-16.61,38.7-10.16,21.77c-6.79,14.56-14.39,27.86-24.31,41.22,14.21,10.32,29.97,18.94,47.44,21.29l21.87,2.94-14.6,1.01c-36.38-.23-71.9-14.31-100.97-36.06-18.2-13.62-33.76-29.26-48.28-46.65l-20.51-24.56c-6.18-7.4-13.83-12.22-22.33-16.93,27.09-.35,47.08-13.58,72.21-40.7,0,0,11.14-33.07-1.27-57.15-10.01-19.43-28.45-32.58-50.41-32.68l-44.06-.2-.08,43.88-30.81-.57-.8-25.87c-.23-7.28-4.74-14.13-11.59-16.56-6.02-2.14-11.55-2.14-18.56-3.44,4.55-1.16,8.53-1.48,13.03-1.47l105.8.21c24.65.05,53.87,9.42,66.79,30.62,16.28,26.72,11.28,61.16-11.96,83.13l-10.56,7.64c-11.84,7.01-24.39,11.26-38.59,14.16,11.27,5.24,19.6,13.77,27.75,23.38l41.22,48.65c8.2,8.4,15.36,16.41,25.33,22.98,8.58-12.52,14.07-24.02,19.98-36.61l88.98-201.19,16.79,42.87,22.24,58.68,11.61,31.68,4.23,10.95,11.14,29.56,15.18,39.71,7.66,14.1c6.27,8.55,15.23,11.54,25.29,11.59,10.72.06,20.02-3.83,25.51-13.95,2.26-6.57,3.98-13.56,4.02-20.26l.18-28.21-.11-10.02.38-133.12c.04-14.25-9.65-24.31-24.16-24-2.3.05-4.97.15-6.98-1.99l57.27-.57,19.3,35.94,35.49,64.67,18.01,33,16.14,29.27,1.77-.34,34.37-68.9,46.27-93.66,50.82.37c1.8.19,1.83.77.08,1.55-7.82.76-16.14,1.08-21.67,7.26-4.41,4.94-4.84,11.49-5.82,18.46v185.55s1.37,13.76,5.24,15.06c5.59,1.88,13.32-6.76,16.18-16.15l7.73-17.14,26.08-61.53,37.03-83.88,25.09-55.91,20.38,50.32,10.68,27.17,16.28,42.21,3.3,9.06,19.96,52.27,14.11,35.78c2.84,7.21,7.05,13.28,13.64,17.62,10.51,6.92,25.03,2.27,20.47,6.67l-91.48-.22c4.19-2.55,8.15-2.47,12.27-3.18,16.75-2.89,11.14-22.99,5.01-39.79l-21.8-59.12-7.28-18.39-14.2-37.03-15.51-38.45-10.01,22.98-29.39,68.29M1064.17,611.99l20.5-47.85"/>
+      <path d="M398.9,644.07l-58.63-.85c7.25-3.08,13.8-.99,20.43-4.23,9.28-4.53,12.44-13.48,12.44-24.51l.07-141.91c10.35-.71,19.92-.28,30.86.66l-.11,93.3.47,50.97c.07,7.95,3.28,15.91,9.74,20.09,7.33,4.73,15.31,2.32,23.96,5.43-13.35,1.43-25.65,1.26-39.24,1.07Z"/>
+    </g>
+    <g style="fill: var(--logo-red, #b31001)">
+      <path d="M1063.1,614.38c-19.13,21.25-60.62,19.97-60.62,19.97,0,0-83.29,13.13-188.73-57.63s-203.07-32.56-203.07-32.56c0,0-50.14,31.15-114.92-28.78s-63.43-46.91-122.59-51c-59.16-4.09-139.54,46.35-139.54,46.35-116.65,76.35-182.93,76.85-182.93,76.85,0,0,59.55,9.82,182.93-66.98,0,0,108.95-52.6,139.58-48.03,39.92,5.96,45.85-19.68,115.47,49.9,69.62,69.57,117.54,31.77,117.54,31.77,0,0,46.02-19.04,89.18-11.23s89.34,20.29,118.46,43.73,144.99,61.17,187.17,51.99c0,0,34.37-2.98,58.3-15.99"/>
+      <path d="M1175.17,549.46s-29.41,79.58-107.92,74.1-8.05-76.17,26.55-80.56c0,0,111.18-42.18,205.28,4.26,94.1,46.44,96.87,149.84,96.87,149.84-28.64-139.68-147.19-169.52-226.15-161.19-78.96,8.33-80.14,20.95-82.22,20.83-6.64-.39-91.49,54.44-17.36,58.2s102.39-71.95,102.39-71.95"/>
+    </g>
+  </symbol>
+  </svg>
+  <header class="topbar">
+    <span class="brand">Vitra <i>·</i> <svg viewBox="0 0 1356 300" class="logo logo-bar" role="img" aria-label="TRAMA"><use href="#trama"/></svg></span>
+    <nav class="acts" id="acts" aria-label="Les trois temps">
+      <a href="#passe" data-act="passe">Passé</a>
+      <a href="#present" data-act="present">Présent</a>
+      <a href="#futur" data-act="futur">Futur</a>
+    </nav>
+    <span class="date">26.11.2026</span>
+  </header>
+
+  <!-- The red thread: one continuous line through the whole document, drawn as you scroll -->
+  <svg class="thread" id="thread" aria-hidden="true"><path id="thread-path"/><circle id="thread-tip" r="3.5"/></svg>
+
+  <!-- ============================================================ INTRO -->
+  <section class="intro" id="intro">
+    <span class="knot" data-thread="start"></span>
+    <p class="eyebrow">Vitra présente</p>
+    <h1><svg viewBox="0 0 1356 300" class="logo logo-hero" role="img" aria-label="TRAMA"><use href="#trama"/></svg></h1>
+    <p class="tagline">Follow the thread</p>
+    <p class="lede">Un fil rouge, trois temps, un fauteuil.<br>
+      En italien, <em>trama</em> désigne à la fois la trame d’un tissu et l’intrigue d’un récit.</p>
+    <p class="meta">Vitra Campus, Weil am Rhein — jeudi 26 novembre 2026</p>
+    <p class="hint">Suivez le fil</p>
+    <span class="knot" data-thread="0.62,1"></span>
+  </section>
+
+  <!-- ============================================================ PASSÉ -->
+  <section class="passe" id="passe">
+    <header class="act-head">
+      <p class="eyebrow">01 · Passé — Schaudepot</p>
+      <h2>Le fil <span class="red-under">trace</span>.</h2>
+      <p class="lede">Un trait continu relie les icônes de la collection. Depuis 1950, Vitra édite des pièces qui ont transformé notre manière d’habiter&nbsp;: c’est de là que part le fil.</p>
+    </header>
+    <ol class="icons">
+      <li class="left"><span class="node" data-thread></span><b>1934</b><h3>Standard</h3><p>Jean Prouvé</p></li>
+      <li class="right"><span class="node" data-thread></span><b>1950</b><h3>Plastic Chair</h3><p>Charles &amp; Ray Eames</p></li>
+      <li class="left"><span class="node" data-thread></span><b>1956</b><h3>Lounge Chair</h3><p>Charles &amp; Ray Eames</p></li>
+      <li class="right"><span class="node" data-thread></span><b>1959</b><h3>Panton Chair</h3><p>Verner Panton</p></li>
+      <li class="left next"><span class="node open" data-thread></span><b>2026</b><h3><svg viewBox="0 0 1356 300" class="logo logo-icon" role="img" aria-label="TRAMA"><use href="#trama"/></svg></h3><p>La suite logique d’une histoire.</p></li>
+    </ol>
+    <p class="caption">Le fauteuil n’est pas une nouveauté de plus. Il prolonge le trait.</p>
+  </section>
+
+  <!-- ============================================================ PRÉSENT + FUTUR (sticky 3D stage) -->
+  <section class="scrolly" id="scrolly">
+    <span class="knot" data-thread="0.62,0" id="present"></span>
+    <span class="act-anchor" id="futur"></span>
+    <div class="stage" id="stage">
+      <canvas id="scene"></canvas>
+      <svg class="leaders" id="leaders" aria-hidden="true">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" class="arrow-head"/>
+          </marker>
+        </defs>
+        <g id="rays"></g>
+        <path id="fil-leader" class="fil-leader" marker-end="url(#arrow)"/>
+        <g id="part-leaders"></g>
+      </svg>
+      <div class="labels" id="labels"></div>
+      <div class="fil-label" id="fil-label"><b>Le fil rouge</b><span>Un seul fil de trame, tissé puis cousu.</span></div>
+
+      <!-- explanations, one per scroll beat -->
+      <div class="beats">
+        <article class="beat" data-from="0" data-to="0.085">
+          <p class="eyebrow">02 · Présent — VitraHaus, atelier</p>
+          <h2>Le fil <span class="red-under">se tisse</span>.</h2>
+          <p class="lede">D’abord un fragment&nbsp;: une couture. Le fil entre dans le fauteuil.</p>
+        </article>
+        <article class="beat" data-from="0.085" data-to="0.17">
+          <p class="eyebrow">Silhouette</p>
+          <h3>Une coque en bois moulé</h3>
+          <p>Un fauteuil lounge enveloppant, posé sur un piètement en bois massif. Rien n’est collé&nbsp;: tout s’assemble.</p>
+        </article>
+        <article class="beat" data-from="0.17" data-to="0.3">
+          <p class="eyebrow">Démontable</p>
+          <h3>Chaque couche se détache</h3>
+          <p>Piètement, liaisons, coque, housse, coussins. Démontable pour être réparé, une pièce après l’autre, plutôt que remplacé.</p>
+        </article>
+        <article class="beat" data-from="0.3" data-to="0.43">
+          <p class="eyebrow">Le fil rouge</p>
+          <h3>Un seul fil de trame</h3>
+          <p>Le dernier élément à quitter le fauteuil est aussi le plus fin&nbsp;: un fil rouge qui traverse tout le tissage et ressort en couture visible.</p>
+        </article>
+        <article class="beat" data-from="0.43" data-to="0.54">
+          <p class="eyebrow">Textile</p>
+          <h3>Tissé par Hella Jongerius</h3>
+          <p>Le textile est tissé en fibres recyclées. Le fil de trame rouge y est pris dès le métier à tisser, puis devient la couture qui dessine la coque.</p>
+        </article>
+        <article class="beat" data-from="0.54" data-to="0.62">
+          <p class="eyebrow">Assemblage</p>
+          <h3>Le fil referme le fauteuil</h3>
+          <p>Il revient en dernier. C’est lui qui tient la housse, et c’est lui qu’on remarque.</p>
+        </article>
+        <article class="beat dark" data-from="0.62" data-to="0.75">
+          <p class="eyebrow">03 · Futur — VitraHaus, espace sombre</p>
+          <h2>Le fil <span class="red-under">s’allume</span>.</h2>
+          <p class="lede">Dans l’installation de Chiharu Shiota, les fils convergent vers le fauteuil.</p>
+        </article>
+        <article class="beat dark" data-from="0.75" data-to="0.88">
+          <p class="eyebrow">19 h 30 — la révélation</p>
+          <h3>La lumière suit les fils</h3>
+          <p>Elle s’arrête sur la couture, puis révèle TRAMA. Le fauteuil, et d’où vient son fil.</p>
+        </article>
+        <article class="beat dark reveal" data-from="0.88" data-to="1.01">
+          <svg viewBox="0 0 1356 300" class="logo logo-reveal" role="img" aria-label="TRAMA"><use href="#trama"/></svg>
+          <h2>Past shaped us.<br><span class="dim">Now we shape what comes next.</span></h2>
+        </article>
+      </div>
+
+      <!-- the page thread passing through the stage: above the text panels so it never breaks -->
+      <svg class="leaders stage-threads" id="stage-threads" aria-hidden="true">
+        <path id="stage-thread-in" class="stage-thread"/>
+        <path id="stage-thread-out" class="stage-thread"/>
+      </svg>
+
+      <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+      <div class="loader" id="loader"><span id="loader-pct">0 %</span></div>
+    </div>
+    <span class="knot" data-thread="0.62,1" id="scrolly-end"></span>
+  </section>
+
+  <!-- ============================================================ LE RENDEZ-VOUS -->
+  <section class="event" id="event">
+    <header class="act-head">
+      <p class="eyebrow">Le rendez-vous</p>
+      <h2>Jeudi 26 novembre 2026.</h2>
+      <p class="lede">Une soirée sur le Vitra Campus, en trois temps, le long d’un trait lumineux rouge.</p>
+    </header>
+
+    <ol class="timeline">
+      <li><span class="node" data-thread></span><time>18 h 30</time><div><h3>Passé</h3><p>Accueil au Schaudepot. Le fil trace les icônes de la collection.</p></div></li>
+      <li><span class="node" data-thread></span><time>19 h 00</time><div><h3>Présent</h3><p>Traversée du campus le long d’un trait lumineux, jusqu’à l’atelier de la VitraHaus.</p></div></li>
+      <li><span class="node" data-thread></span><time>19 h 30</time><div><h3>Futur</h3><p>La lumière suit les fils et révèle TRAMA. En direct sur les réseaux.</p></div></li>
+      <li><span class="node" data-thread></span><time>20 h 00</time><div><h3>Essai</h3><p>Essai du fauteuil, rencontres, photos, cocktail.</p></div></li>
+    </ol>
+
+    <div class="cols">
+      <article>
+        <p class="eyebrow">Ouverture publique</p>
+        <h3>27.11.2026 → 10.01.2027</h3>
+        <p>Six semaines de parcours ouvert à tous&nbsp;: textes en allemand, français et anglais, vidéo de la révélation, fauteuil en libre essai, visites commentées le week-end, journée réservée aux étudiants en design.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Accessibilité</p>
+        <h3>Pour tous</h3>
+        <p>Parcours praticable en fauteuil roulant, y compris la traversée extérieure. Sous-titres sur toutes les vidéos, audiodescription du fauteuil par QR code, visite à 360° de l’acte Futur en ligne.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Le duo</p>
+        <h3>Jongerius × Shiota</h3>
+        <p>Hella Jongerius conçoit le textile et la couture. Chiharu Shiota, connue pour ses installations en fil rouge, conçoit l’acte Futur.</p>
+      </article>
+    </div>
+    <span class="knot" data-thread="0.5,1"></span>
+  </section>
+
+  <footer class="foot">
+    <span class="knot" data-thread="end"></span>
+    <p class="sig">Past shaped us.<br>Now we shape what comes next.</p>
+    <p class="fine">Projet étudiant fictif — Enzo Locatelli, BUT MMI, parcours Création Numérique, 2026. Collaboration imaginée&nbsp;; aucune déclaration n’est attribuée à Hella Jongerius ni à Chiharu Shiota.</p>
+  </footer>
+
+  <script type="module" src="main.js?v=16"></script>
+</body>
+</html>
